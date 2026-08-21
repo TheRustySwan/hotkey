@@ -30,8 +30,11 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
 
+      - name: Install cargo-binstall
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
       - name: Install Dioxus CLI
-        run: cargo install dioxus-cli
+        run: cargo binstall dioxus-cli --no-confirm
 
       - name: Build Dioxus App
         working-directory: hotkey_web
