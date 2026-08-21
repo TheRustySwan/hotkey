@@ -481,13 +481,13 @@ fn App() -> Element {
             }}
             .sw-tag {{
                 color: #be95ff;
-                width: 80px;
+                width: 120px;
                 flex-shrink: 0;
             }}
             .keys-tag {{
                 color: #3ddbd9;
                 font-weight: bold;
-                width: 250px;
+                width: 270px;
                 flex-shrink: 0;
             }}
             .desc-tag {{
