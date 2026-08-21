@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Dioxus App
         working-directory: hotkey_web
-        run: dx build --release
+        run: dx build --release --base-path /hotkey/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
