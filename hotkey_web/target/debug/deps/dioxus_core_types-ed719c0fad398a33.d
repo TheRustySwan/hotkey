@@ -1,9 +1,0 @@
-C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\dioxus_core_types-ed719c0fad398a33.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\bubbles.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\bundled.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\formatter.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\hr_context.rs
-
-C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\libdioxus_core_types-ed719c0fad398a33.rmeta: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\bubbles.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\bundled.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\formatter.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\hr_context.rs
-
-C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\lib.rs:
-C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\bubbles.rs:
-C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\bundled.rs:
-C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\formatter.rs:
-C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\dioxus-core-types-0.7.10\src\hr_context.rs:
