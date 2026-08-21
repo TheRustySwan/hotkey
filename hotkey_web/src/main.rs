@@ -424,7 +424,7 @@ fn App() -> Element {
             body {{
                 background-color: #161616;
                 color: #f2f4f8;
-                font-family: monospace;
+                font-family: 'JetBrainsMono NF', 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
                 margin: 0;
                 padding: 20px;
                 display: flex;
@@ -439,6 +439,16 @@ fn App() -> Element {
                 margin-top: 12px;
                 margin-bottom: 10px;
                 position: relative;
+            }}
+            .results-panel {{
+                border: 1px solid #393939;
+                position: relative;
+                margin-top: 12px;
+                padding: 10px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                min-height: 0;
             }}
             .panel-title {{
                 position: absolute;
@@ -455,10 +465,7 @@ fn App() -> Element {
             .list-container {{
                 flex-grow: 1;
                 overflow-y: auto;
-                border: 1px solid #393939;
-                position: relative;
-                margin-top: 12px;
-                padding: 10px;
+                min-height: 0;
             }}
             .list-item {{
                 padding: 2px 0;
@@ -534,25 +541,27 @@ fn App() -> Element {
                 }
             }
 
-            div { class: "list-container",
+            div { class: "results-panel",
                 div { class: "panel-title", "Results" }
-                {
-                    fi.iter().enumerate().map(|(idx, &(i, _))| {
-                        let hotkey = &ALL_HOTKEYS[i];
-                        let is_selected = if mode() == Mode::Search && idx == selected_index() { "selected" } else { "" };
-                        let prefix = if is_selected == "selected" { ">> " } else { "   " };
-                        
-                        rsx! {
-                            div {
-                                class: "list-item {is_selected}",
-                                key: "{i}",
-                                span { class: "prefix-tag", "{prefix}" }
-                                span { class: "sw-tag", "[{hotkey.software}]" }
-                                span { class: "keys-tag", "{hotkey.keys}" }
-                                span { class: "desc-tag", "{hotkey.description}" }
+                div { class: "list-container",
+                    {
+                        fi.iter().enumerate().map(|(idx, &(i, _))| {
+                            let hotkey = &ALL_HOTKEYS[i];
+                            let is_selected = if mode() == Mode::Search && idx == selected_index() { "selected" } else { "" };
+                            let prefix = if is_selected == "selected" { ">> " } else { "   " };
+                            
+                            rsx! {
+                                div {
+                                    class: "list-item {is_selected}",
+                                    key: "{i}",
+                                    span { class: "prefix-tag", "{prefix}" }
+                                    span { class: "sw-tag", "[{hotkey.software}]" }
+                                    span { class: "keys-tag", "{hotkey.keys}" }
+                                    span { class: "desc-tag", "{hotkey.description}" }
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
                 }
             }
 
