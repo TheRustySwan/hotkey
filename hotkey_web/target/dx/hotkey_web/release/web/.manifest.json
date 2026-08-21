@@ -1,0 +1,44 @@
+{
+  "cli_version": "0.7.10 (57d6794)",
+  "assets": {
+    "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\public\\favicon.png": [
+      {
+        "absolute_source_path": "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\public\\favicon.png",
+        "bundled_path": "../favicon.png",
+        "options": {
+          "add_hash": false,
+          "variant": "Unknown"
+        }
+      }
+    ],
+    "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\target\\dx\\hotkey_web\\release\\web\\public\\wasm\\hotkey_web.js": [
+      {
+        "absolute_source_path": "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\target\\dx\\hotkey_web\\release\\web\\public\\wasm\\hotkey_web.js",
+        "bundled_path": "hotkey_web-dxh82754d456c29cb11.js",
+        "options": {
+          "add_hash": true,
+          "variant": {
+            "Js": {
+              "minify": true,
+              "preload": true,
+              "static_head": false,
+              "module": false
+            }
+          }
+        }
+      }
+    ],
+    "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\target\\dx\\hotkey_web\\release\\web\\public\\wasm\\hotkey_web_bg.wasm": [
+      {
+        "absolute_source_path": "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\target\\dx\\hotkey_web\\release\\web\\public\\wasm\\hotkey_web_bg.wasm",
+        "bundled_path": "hotkey_web_bg-dxh8e424a33fd260a5.wasm",
+        "options": {
+          "add_hash": true,
+          "variant": "Unknown"
+        }
+      }
+    ]
+  },
+  "android_artifacts": [],
+  "swift_sources": []
+}

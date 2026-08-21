@@ -1,0 +1,10 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-release\deps\proc_macro2_diagnostics-7b85ba8debc68c60.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\ext.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\diagnostic.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\line.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-release\deps\libproc_macro2_diagnostics-7b85ba8debc68c60.rlib: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\ext.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\diagnostic.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\line.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-release\deps\libproc_macro2_diagnostics-7b85ba8debc68c60.rmeta: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\ext.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\diagnostic.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\line.rs
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\lib.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\ext.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\diagnostic.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\proc-macro2-diagnostics-0.10.1\src\line.rs:

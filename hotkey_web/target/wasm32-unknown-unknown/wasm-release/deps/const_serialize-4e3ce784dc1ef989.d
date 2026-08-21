@@ -1,0 +1,10 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm32-unknown-unknown\wasm-release\deps\const_serialize-4e3ce784dc1ef989.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm32-unknown-unknown\wasm-release\deps\libconst_serialize-4e3ce784dc1ef989.rlib: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm32-unknown-unknown\wasm-release\deps\libconst_serialize-4e3ce784dc1ef989.rmeta: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md:

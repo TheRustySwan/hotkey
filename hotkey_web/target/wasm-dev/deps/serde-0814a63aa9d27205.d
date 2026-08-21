@@ -1,0 +1,14 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\deps\serde-0814a63aa9d27205.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\integer128.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\mod.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\de.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\ser.rs C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\build\serde-45dc2ce4f96b8fb7\out/private.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\deps\libserde-0814a63aa9d27205.rlib: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\integer128.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\mod.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\de.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\ser.rs C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\build\serde-45dc2ce4f96b8fb7\out/private.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\deps\libserde-0814a63aa9d27205.rmeta: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\integer128.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\mod.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\de.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\ser.rs C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\build\serde-45dc2ce4f96b8fb7\out/private.rs
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\lib.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\integer128.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\mod.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\de.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\src\private\ser.rs:
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\build\serde-45dc2ce4f96b8fb7\out/private.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\target\\wasm-dev\\build\\serde-45dc2ce4f96b8fb7\\out

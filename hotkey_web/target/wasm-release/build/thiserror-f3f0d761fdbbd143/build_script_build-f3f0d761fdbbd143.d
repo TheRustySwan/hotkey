@@ -1,0 +1,5 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-release\build\thiserror-f3f0d761fdbbd143\build_script_build-f3f0d761fdbbd143.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.20\build.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-release\build\thiserror-f3f0d761fdbbd143\build_script_build-f3f0d761fdbbd143.exe: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.20\build.rs
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\thiserror-2.0.20\build.rs:

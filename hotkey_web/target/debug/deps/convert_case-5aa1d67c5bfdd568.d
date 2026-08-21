@@ -1,0 +1,11 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\convert_case-5aa1d67c5bfdd568.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\boundary.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\case.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\converter.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\pattern.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\libconvert_case-5aa1d67c5bfdd568.rlib: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\boundary.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\case.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\converter.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\pattern.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\libconvert_case-5aa1d67c5bfdd568.rmeta: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\boundary.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\case.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\converter.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\pattern.rs
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\lib.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\boundary.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\case.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\converter.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\convert_case-0.8.0\src\pattern.rs:

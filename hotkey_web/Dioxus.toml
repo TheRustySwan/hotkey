@@ -1,0 +1,4 @@
+[application]
+name = "Hotkeys"
+default_platform = "web"
+out_dir = "dist"

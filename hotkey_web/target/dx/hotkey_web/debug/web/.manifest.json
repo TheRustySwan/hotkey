@@ -1,0 +1,17 @@
+{
+  "cli_version": "0.7.10 (57d6794)",
+  "assets": {
+    "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\public\\favicon.png": [
+      {
+        "absolute_source_path": "C:\\Users\\thede\\Projects\\208_HotkeyApp\\hotkey_web\\public\\favicon.png",
+        "bundled_path": "../favicon.png",
+        "options": {
+          "add_hash": false,
+          "variant": "Unknown"
+        }
+      }
+    ]
+  },
+  "android_artifacts": [],
+  "swift_sources": []
+}

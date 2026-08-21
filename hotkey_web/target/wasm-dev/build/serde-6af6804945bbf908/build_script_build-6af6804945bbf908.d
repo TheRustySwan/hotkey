@@ -1,0 +1,5 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\build\serde-6af6804945bbf908\build_script_build-6af6804945bbf908.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\build.rs
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\wasm-dev\build\serde-6af6804945bbf908\build_script_build-6af6804945bbf908.exe: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\build.rs
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.229\build.rs:

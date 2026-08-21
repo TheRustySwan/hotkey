@@ -1,0 +1,10 @@
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\const_serialize-28fc3955b2f4a2e3.d: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\libconst_serialize-28fc3955b2f4a2e3.rlib: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md
+
+C:\Users\thede\Projects\208_HotkeyApp\hotkey_web\target\debug\deps\libconst_serialize-28fc3955b2f4a2e3.rmeta: C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md
+
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\lib.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_buffers.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\const_vec.rs:
+C:\Users\thede\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-serialize-0.7.2\src\../README.md:
