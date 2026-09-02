@@ -406,11 +406,17 @@ fn App() -> Element {
                 --theme-accent-subtle: rgba(214, 6, 69, 0.14);
                 --theme-accent-glow: rgba(214, 6, 69, 0.4);
 
-                --theme-success: #10b981;
-                --theme-success-subtle: rgba(16, 185, 129, 0.15);
-                --theme-danger: #e04848;
-                --theme-warning: #f59e0b;
-                --theme-info: #38bdf8;
+                --theme-success: #a6d24b;
+                --theme-success-subtle: rgba(166, 210, 75, 0.15);
+                --theme-danger: #e0566f;
+                --theme-danger-subtle: rgba(224, 86, 111, 0.15);
+                --theme-danger-hover: #ef7288;
+                --theme-warning: #d9b23a;
+                --theme-warning-subtle: rgba(217, 178, 58, 0.15);
+                --theme-info: #7aa2c7;
+                --theme-info-subtle: rgba(122, 162, 199, 0.15);
+                --theme-violet: #9b87c4;
+                --theme-teal: #6fbfa4;
 
                 --text-bright: #bdbcbc;
                 --text-normal: #a8a8a8;
@@ -609,7 +615,7 @@ fn App() -> Element {
                     // Boundary-Free Status Indicator
                     div {
                         style: "display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-normal); letter-spacing: 0.2px;",
-                        span { style: "width: 7px; height: 7px; border-radius: 50%; background-color: var(--theme-success); box-shadow: 0 0 6px rgba(16, 185, 129, 0.4); display: inline-block;" }
+                        span { style: "width: 7px; height: 7px; border-radius: 50%; background-color: var(--theme-success); box-shadow: 0 0 6px rgba(166, 210, 75, 0.4); display: inline-block;" }
                         span { "OPERATIONAL" }
                     }
 

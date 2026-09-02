@@ -590,7 +590,7 @@ const THEME_BORDER_SUBTLE: Color = Color::Rgb(44, 44, 44); // #2c2c2c
 
 const THEME_ACCENT: Color = Color::Rgb(214, 6, 69);        // #d60645 (Signature Magenta)
 const THEME_ACCENT_BRIGHT: Color = Color::Rgb(222, 27, 84);// #de1b54
-const THEME_SUCCESS: Color = Color::Rgb(16, 185, 129);     // #10b981
+const THEME_SUCCESS: Color = Color::Rgb(166, 210, 75);     // #a6d24b
 
 const THEME_TEXT_BRIGHT: Color = Color::Rgb(189, 189, 189);// #bdbcbc
 const THEME_TEXT_NORMAL: Color = Color::Rgb(168, 168, 168);// #a8a8a8
