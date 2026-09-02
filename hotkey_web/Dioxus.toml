@@ -1,5 +1,7 @@
 [application]
-name = "Hotkeys"
+name = "NullHotkeys"
 default_platform = "web"
 out_dir = "dist"
 
+[web.app]
+title = "NULLHOTKEYS"

@@ -58,16 +58,16 @@ lazy_static::lazy_static! {
         Hotkey { software: "vscode", keys: "Alt+Enter", description: "Select all occurences of Find match" },
         Hotkey { software: "vscode", keys: "Ctrl+D", description: "Add selection to next Find match" },
         Hotkey { software: "vscode", keys: "Ctrl+K Ctrl+D", description: "Move last selection to next Find match" },
-        Hotkey { software: "vscode", keys: "Alt+C / R / W", description: "Toggle case-sensitive / regex / whole word" },
         Hotkey { software: "vscode", keys: "Alt+Click", description: "Insert cursor" },
-        Hotkey { software: "vscode", keys: "Ctrl+Alt+Up/Down", description: "Insert cursor above / below" },
+        Hotkey { software: "vscode", keys: "Ctrl+Alt+Up / Down", description: "Insert cursor above / below" },
         Hotkey { software: "vscode", keys: "Ctrl+U", description: "Undo last cursor operation" },
         Hotkey { software: "vscode", keys: "Shift+Alt+I", description: "Insert cursor at end of each line selected" },
-        Hotkey { software: "vscode", keys: "Ctrl+L", description: "Select current line" },
+        Hotkey { software: "vscode", keys: "Ctrl+I", description: "Select current line" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+L", description: "Select all occurrences of current selection" },
         Hotkey { software: "vscode", keys: "Ctrl+F2", description: "Select all occurrences of current word" },
         Hotkey { software: "vscode", keys: "Shift+Alt+Right", description: "Expand selection" },
         Hotkey { software: "vscode", keys: "Shift+Alt+Left", description: "Shrink selection" },
+        Hotkey { software: "vscode", keys: "Shift+Alt+Drag", description: "Column (box) selection" },
         Hotkey { software: "vscode", keys: "Ctrl+Space", description: "Trigger suggestion" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+Space", description: "Trigger parameter hints" },
         Hotkey { software: "vscode", keys: "Shift+Alt+F", description: "Format document" },
@@ -80,7 +80,7 @@ lazy_static::lazy_static! {
         Hotkey { software: "vscode", keys: "F2", description: "Rename Symbol" },
         Hotkey { software: "vscode", keys: "Ctrl+K Ctrl+X", description: "Trim trailing whitespace" },
         Hotkey { software: "vscode", keys: "Ctrl+K M", description: "Change file language" },
-        Hotkey { software: "vscode", keys: "Ctrl+F4, Ctrl+W", description: "Close editor" },
+        Hotkey { software: "vscode", keys: "Ctrl+F4 / Ctrl+W", description: "Close editor" },
         Hotkey { software: "vscode", keys: "Ctrl+K F", description: "Close folder" },
         Hotkey { software: "vscode", keys: "Ctrl+\\", description: "Split editor" },
         Hotkey { software: "vscode", keys: "Ctrl+1 / 2 / 3", description: "Focus into 1st, 2nd or 3rd editor group" },
@@ -103,102 +103,55 @@ lazy_static::lazy_static! {
         Hotkey { software: "vscode", keys: "Ctrl+K O", description: "Show active file in new window/instance" },
         Hotkey { software: "vscode", keys: "F11", description: "Toggle full screen" },
         Hotkey { software: "vscode", keys: "Shift+Alt+0", description: "Toggle editor layout (horizontal/vertical)" },
-        Hotkey { software: "vscode", keys: "Ctrl+=", description: "Zoom in" },
-        Hotkey { software: "vscode", keys: "Ctrl+-", description: "Zoom out" },
-        Hotkey { software: "vscode", keys: "Ctrl+B", description: "Toggle Sidebar visibility" },
-        Hotkey { software: "vscode", keys: "Ctrl+Shift+E", description: "Show Explorer / Toggle focus" },
+        Hotkey { software: "vscode", keys: "Ctrl+= / -", description: "Zoom in/out" },
+        Hotkey { software: "vscode", keys: "Ctrl+B", description: "Toggle Primary Side Bar visibility" },
+        Hotkey { software: "vscode", keys: "Ctrl+Shift+E", description: "Show Explorer / Toggle Focus" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+F", description: "Show Search" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+G", description: "Show Source Control" },
-        Hotkey { software: "vscode", keys: "Ctrl+Shift+D", description: "Show Debug" },
+        Hotkey { software: "vscode", keys: "Ctrl+Shift+D", description: "Show Run and Debug" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+X", description: "Show Extensions" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+H", description: "Replace in files" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+J", description: "Toggle Search details" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+U", description: "Show Output panel" },
         Hotkey { software: "vscode", keys: "Ctrl+Shift+V", description: "Open Markdown preview" },
         Hotkey { software: "vscode", keys: "Ctrl+K V", description: "Open Markdown preview to the side" },
-        Hotkey { software: "vscode", keys: "Ctrl+`", description: "Show integrated terminal" },
+        Hotkey { software: "vscode", keys: "Ctrl+K Z", description: "Zen Mode (Esc Esc to exit)" },
         Hotkey { software: "vscode", keys: "F9", description: "Toggle breakpoint" },
-        Hotkey { software: "vscode", keys: "F5", description: "Start/Continue" },
+        Hotkey { software: "vscode", keys: "F5", description: "Start / Continue" },
         Hotkey { software: "vscode", keys: "Shift+F5", description: "Stop" },
-        Hotkey { software: "vscode", keys: "F11 / Shift+F11", description: "Step into/out" },
+        Hotkey { software: "vscode", keys: "F11 / Shift+F11", description: "Step into / out" },
         Hotkey { software: "vscode", keys: "F10", description: "Step over" },
+        Hotkey { software: "vscode", keys: "Ctrl+K Ctrl+I", description: "Show hover" },
+        Hotkey { software: "vscode", keys: "Ctrl+`", description: "Show integrated terminal" },
+        Hotkey { software: "vscode", keys: "Ctrl+Shift+`", description: "Create new terminal" },
+        Hotkey { software: "vscode", keys: "Ctrl+C", description: "Copy selection" },
+        Hotkey { software: "vscode", keys: "Ctrl+V", description: "Paste into active terminal" },
+        Hotkey { software: "vscode", keys: "Ctrl+Up / Down", description: "Scroll up / down" },
+        Hotkey { software: "vscode", keys: "Shift+PgUp / PgDn", description: "Scroll page up / down" },
+        Hotkey { software: "vscode", keys: "Ctrl+Home / End", description: "Scroll to top / bottom" },
 
-        // LazyVim & Neovim Core
-        Hotkey { software: "lazyvim", keys: "h / j / k / l", description: "Move left / down / up / right" },
-        Hotkey { software: "lazyvim", keys: "w / W", description: "Move to next word (W ignores punctuation)" },
-        Hotkey { software: "lazyvim", keys: "e / E", description: "Move to end of word" },
-        Hotkey { software: "lazyvim", keys: "b / B", description: "Move to previous word" },
-        Hotkey { software: "lazyvim", keys: "0", description: "Move to start of line" },
-        Hotkey { software: "lazyvim", keys: "^", description: "Move to first non-blank character of line" },
-        Hotkey { software: "lazyvim", keys: "$", description: "Move to end of line" },
-        Hotkey { software: "lazyvim", keys: "gg", description: "Move to first line of file" },
-        Hotkey { software: "lazyvim", keys: "G", description: "Move to last line of file" },
-        Hotkey { software: "lazyvim", keys: "{ / }", description: "Move to previous / next paragraph" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+d / Ctrl+u", description: "Scroll half page down / up" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+f / Ctrl+b", description: "Scroll full page down / up" },
-        Hotkey { software: "lazyvim", keys: "%", description: "Jump to matching bracket/brace" },
-        Hotkey { software: "lazyvim", keys: "i / I", description: "Insert before cursor / at beginning of line" },
-        Hotkey { software: "lazyvim", keys: "a / A", description: "Append after cursor / at end of line" },
-        Hotkey { software: "lazyvim", keys: "o / O", description: "Open new line below / above" },
-        Hotkey { software: "lazyvim", keys: "x / X", description: "Delete character under / before cursor" },
-        Hotkey { software: "lazyvim", keys: "r / R", description: "Replace single character / Enter Replace mode" },
-        Hotkey { software: "lazyvim", keys: "s / S", description: "Substitute character / line" },
-        Hotkey { software: "lazyvim", keys: "c / C", description: "Change (with motion) / Change to end of line" },
-        Hotkey { software: "lazyvim", keys: "cc", description: "Change current line" },
-        Hotkey { software: "lazyvim", keys: "d / D", description: "Delete (with motion) / Delete to end of line" },
-        Hotkey { software: "lazyvim", keys: "dd", description: "Delete current line" },
-        Hotkey { software: "lazyvim", keys: "y / yy", description: "Yank (copy with motion) / Yank current line" },
-        Hotkey { software: "lazyvim", keys: "p / P", description: "Paste after / before cursor" },
-        Hotkey { software: "lazyvim", keys: "u", description: "Undo" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+r", description: "Redo" },
-        Hotkey { software: "lazyvim", keys: ".", description: "Repeat last change" },
-        Hotkey { software: "lazyvim", keys: "~", description: "Toggle case of character under cursor" },
-        Hotkey { software: "lazyvim", keys: "/", description: "Search forward" },
-        Hotkey { software: "lazyvim", keys: "?", description: "Search backward" },
-        Hotkey { software: "lazyvim", keys: "n / N", description: "Next / previous search match" },
-        Hotkey { software: "lazyvim", keys: "* / #", description: "Search forward / backward for word under cursor" },
-        Hotkey { software: "lazyvim", keys: "v", description: "Start character-wise visual mode" },
-        Hotkey { software: "lazyvim", keys: "V", description: "Start line-wise visual mode" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+v", description: "Start block-wise visual mode" },
-        Hotkey { software: "lazyvim", keys: "> / <", description: "Indent / outdent selected lines" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+w s / :sp", description: "Split window horizontally" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+w v / :vsp", description: "Split window vertically" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+w q", description: "Close window" },
-        Hotkey { software: "lazyvim", keys: "Ctrl+w =", description: "Make all windows equal size" },
-        Hotkey { software: "lazyvim", keys: "gt / gT", description: "Next / previous tab" },
-        Hotkey { software: "lazyvim", keys: "<leader>ff", description: "Find files (Telescope)" },
-        Hotkey { software: "lazyvim", keys: "<leader>fF", description: "Find files in cwd (Telescope)" },
-        Hotkey { software: "lazyvim", keys: "<leader>fg", description: "Find git files" },
+        // LazyVim
+        Hotkey { software: "lazyvim", keys: "<leader>ff", description: "Find files" },
+        Hotkey { software: "lazyvim", keys: "<leader><space>", description: "Find files (Root Dir)" },
+        Hotkey { software: "lazyvim", keys: "<leader>sg", description: "Grep / Search text" },
+        Hotkey { software: "lazyvim", keys: "<leader>/", description: "Grep (Root Dir)" },
+        Hotkey { software: "lazyvim", keys: "<leader>fb", description: "Buffers list" },
+        Hotkey { software: "lazyvim", keys: "<leader>,", description: "Switch Buffer" },
         Hotkey { software: "lazyvim", keys: "<leader>fr", description: "Recent files" },
-        Hotkey { software: "lazyvim", keys: "<leader>fR", description: "Recent files (cwd)" },
-        Hotkey { software: "lazyvim", keys: "<leader>fc", description: "Find config file" },
-        Hotkey { software: "lazyvim", keys: "<leader>fb", description: "Find buffers" },
-        Hotkey { software: "lazyvim", keys: "<leader>sg", description: "Live grep (root dir)" },
-        Hotkey { software: "lazyvim", keys: "<leader>sG", description: "Live grep (cwd)" },
-        Hotkey { software: "lazyvim", keys: "<leader>sw", description: "Search word (root dir)" },
-        Hotkey { software: "lazyvim", keys: "<leader>sW", description: "Search word (cwd)" },
-        Hotkey { software: "lazyvim", keys: "<leader>sb", description: "Search current buffer" },
-        Hotkey { software: "lazyvim", keys: "<leader>sh", description: "Search help pages" },
-        Hotkey { software: "lazyvim", keys: "<leader>sk", description: "Search keymaps" },
-        Hotkey { software: "lazyvim", keys: "<leader>sc", description: "Search command history" },
-        Hotkey { software: "lazyvim", keys: "<leader>sC", description: "Search commands" },
-        Hotkey { software: "lazyvim", keys: "<leader>sd", description: "Search document diagnostics" },
-        Hotkey { software: "lazyvim", keys: "<leader>sD", description: "Search workspace diagnostics" },
-        Hotkey { software: "lazyvim", keys: "<leader>sm", description: "Jump to mark" },
-        Hotkey { software: "lazyvim", keys: "<leader>sR", description: "Resume search" },
-        Hotkey { software: "lazyvim", keys: "<leader>e", description: "Toggle Neo-tree (root dir)" },
-        Hotkey { software: "lazyvim", keys: "<leader>E", description: "Toggle Neo-tree (cwd)" },
-        Hotkey { software: "lazyvim", keys: "<leader>bd", description: "Delete buffer" },
-        Hotkey { software: "lazyvim", keys: "<leader>bD", description: "Delete buffer and window" },
-        Hotkey { software: "lazyvim", keys: "<leader>bo", description: "Delete other buffers" },
-        Hotkey { software: "lazyvim", keys: "<leader>bl", description: "Delete buffers to the left" },
-        Hotkey { software: "lazyvim", keys: "<leader>br", description: "Delete buffers to the right" },
+        Hotkey { software: "lazyvim", keys: "<leader>fn", description: "New file" },
+        Hotkey { software: "lazyvim", keys: "<leader>e", description: "Toggle Neo-tree (Explorer)" },
+        Hotkey { software: "lazyvim", keys: "<leader>fe", description: "Explorer Neo-tree (Root Dir)" },
         Hotkey { software: "lazyvim", keys: "<leader>bb", description: "Switch to other buffer" },
-        Hotkey { software: "lazyvim", keys: "<S-h> / [b", description: "Previous buffer" },
-        Hotkey { software: "lazyvim", keys: "<S-l> / ]b", description: "Next buffer" },
+        Hotkey { software: "lazyvim", keys: "<leader>bd", description: "Delete/Close buffer" },
+        Hotkey { software: "lazyvim", keys: "<leader>bD", description: "Delete buffer and window" },
+        Hotkey { software: "lazyvim", keys: "[b", description: "Previous buffer" },
+        Hotkey { software: "lazyvim", keys: "]b", description: "Next buffer" },
+        Hotkey { software: "lazyvim", keys: "<leader>bp", description: "Toggle pin buffer" },
+        Hotkey { software: "lazyvim", keys: "<leader>bP", description: "Delete non-pinned buffers" },
+        Hotkey { software: "lazyvim", keys: "<leader>ww", description: "Other window" },
+        Hotkey { software: "lazyvim", keys: "<leader>wd", description: "Delete window" },
         Hotkey { software: "lazyvim", keys: "<leader>w-", description: "Split window below" },
         Hotkey { software: "lazyvim", keys: "<leader>w|", description: "Split window right" },
-        Hotkey { software: "lazyvim", keys: "<leader>wd", description: "Delete window" },
         Hotkey { software: "lazyvim", keys: "<C-h/j/k/l>", description: "Navigate windows" },
         Hotkey { software: "lazyvim", keys: "gd", description: "Go to definition" },
         Hotkey { software: "lazyvim", keys: "gr", description: "Go to references" },
@@ -217,26 +170,33 @@ lazy_static::lazy_static! {
         Hotkey { software: "lazyvim", keys: "<leader>gg", description: "Lazygit" },
         Hotkey { software: "lazyvim", keys: "<leader>gG", description: "Lazygit (cwd)" },
         Hotkey { software: "lazyvim", keys: "<leader>l", description: "Lazy plugin manager" },
-        Hotkey { software: "lazyvim", keys: "<leader>cm", description: "Mason (package manager)" },
+        Hotkey { software: "lazyvim", keys: "<leader>cm", description: "Mason tool installer" },
         Hotkey { software: "lazyvim", keys: "<leader>qq", description: "Quit all" },
-        Hotkey { software: "lazyvim", keys: "<leader>uh", description: "Toggle Inlay Hints" },
+        Hotkey { software: "lazyvim", keys: "<leader>qs", description: "Restore session" },
+        Hotkey { software: "lazyvim", keys: "<leader>ql", description: "Restore last session" },
+        Hotkey { software: "lazyvim", keys: "<leader>qd", description: "Don't save current session" },
+        Hotkey { software: "lazyvim", keys: "<leader>ft", description: "Terminal (Root Dir)" },
+        Hotkey { software: "lazyvim", keys: "<leader>fT", description: "Terminal (cwd)" },
+        Hotkey { software: "lazyvim", keys: "<c-/>", description: "Terminal (Root Dir)" },
+        Hotkey { software: "lazyvim", keys: "<leader>uC", description: "Select colorscheme" },
+        Hotkey { software: "lazyvim", keys: "<leader>un", description: "Dismiss all notifications" },
 
-        // tmux
+        // Tmux
+        Hotkey { software: "tmux", keys: "Ctrl + b", description: "Default prefix key" },
         Hotkey { software: "tmux", keys: "Prefix + c", description: "Create new window" },
-        Hotkey { software: "tmux", keys: "Prefix + d", description: "Detach session" },
-        Hotkey { software: "tmux", keys: "Prefix + s", description: "List sessions" },
-        Hotkey { software: "tmux", keys: "Prefix + w", description: "List windows" },
+        Hotkey { software: "tmux", keys: "Prefix + ,", description: "Rename current window" },
+        Hotkey { software: "tmux", keys: "Prefix + &", description: "Kill current window" },
         Hotkey { software: "tmux", keys: "Prefix + n", description: "Next window" },
         Hotkey { software: "tmux", keys: "Prefix + p", description: "Previous window" },
-        Hotkey { software: "tmux", keys: "Prefix + &", description: "Kill current window" },
-        Hotkey { software: "tmux", keys: "Prefix + ,", description: "Rename current window" },
-        Hotkey { software: "tmux", keys: "Prefix + $", description: "Rename current session" },
-        Hotkey { software: "tmux", keys: "Prefix + %", description: "Split window vertically (left/right)" },
-        Hotkey { software: "tmux", keys: "Prefix + \"", description: "Split window horizontally (top/bottom)" },
+        Hotkey { software: "tmux", keys: "Prefix + 0..9", description: "Select window by number" },
+        Hotkey { software: "tmux", keys: "Prefix + w", description: "List windows interactively" },
+        Hotkey { software: "tmux", keys: "Prefix + %", description: "Split pane vertically (left/right)" },
+        Hotkey { software: "tmux", keys: "Prefix + \"", description: "Split pane horizontally (top/bottom)" },
+        Hotkey { software: "tmux", keys: "Prefix + Arrow", description: "Move focus to pane in direction" },
+        Hotkey { software: "tmux", keys: "Prefix + o", description: "Rotate through panes" },
+        Hotkey { software: "tmux", keys: "Prefix + ;", description: "Toggle between current and previous pane" },
         Hotkey { software: "tmux", keys: "Prefix + x", description: "Kill current pane" },
-        Hotkey { software: "tmux", keys: "Prefix + z", description: "Toggle pane zoom (maximize)" },
-        Hotkey { software: "tmux", keys: "Prefix + <Arrow>", description: "Switch to pane in direction" },
-        Hotkey { software: "tmux", keys: "Prefix + Ctrl+<Arrow>", description: "Resize pane in direction" },
+        Hotkey { software: "tmux", keys: "Prefix + z", description: "Toggle pane zoom (fullscreen)" },
         Hotkey { software: "tmux", keys: "Prefix + {", description: "Swap pane left" },
         Hotkey { software: "tmux", keys: "Prefix + }", description: "Swap pane right" },
         Hotkey { software: "tmux", keys: "Prefix + q", description: "Show pane numbers" },
@@ -260,11 +220,13 @@ enum Mode {
     SelectSoftware,
 }
 
+#[allow(non_snake_case)]
 fn App() -> Element {
     let mut query = use_signal(|| String::new());
     let mut selected_software = use_signal(|| "all".to_string());
     let mut mode = use_signal(|| Mode::Search);
     let mut selected_index = use_signal(|| 0_usize);
+    let copied_id = use_signal(|| Option::<usize>::None);
     
     let mut software_query = use_signal(|| String::new());
     let mut sw_selected_index = use_signal(|| 0_usize);
@@ -283,7 +245,7 @@ fn App() -> Element {
             if q.is_empty() {
                 matches.push((i, 0));
             } else {
-                let target = format!("{} {}", hotkey.keys, hotkey.description);
+                let target = format!("{} {} {}", hotkey.software, hotkey.keys, hotkey.description);
                 if let Some(score) = matcher.fuzzy_match(&target, &q) {
                     matches.push((i, score));
                 }
@@ -323,6 +285,14 @@ fn App() -> Element {
         sw_selected_index.set(0);
     }
 
+    let copy_shortcut = move |idx: usize, keys: &'static str| {
+        let clean_keys = keys.replace('\\', "\\\\").replace('\'', "\\'");
+        let js = format!("navigator.clipboard.writeText('{}');", clean_keys);
+        let _ = document::eval(&js);
+        let mut cid = copied_id;
+        cid.set(Some(idx));
+    };
+
     let onkeydown = move |evt: Event<KeyboardData>| {
         let key = evt.key();
         
@@ -341,6 +311,18 @@ fn App() -> Element {
                         if fi_len > 0 {
                             let curr = selected_index();
                             selected_index.set(if curr == 0 { fi_len - 1 } else { curr - 1 });
+                        }
+                    }
+                    "Enter" => {
+                        let fi = filtered_indices();
+                        if let Some(&(i, _)) = fi.get(selected_index()) {
+                            let hotkey = &ALL_HOTKEYS[i];
+                            copy_shortcut(i, hotkey.keys);
+                        }
+                    }
+                    "Escape" => {
+                        if !query().is_empty() {
+                            query.set(String::new());
                         }
                     }
                     "Backspace" => {
@@ -416,109 +398,187 @@ fn App() -> Element {
 
     let fi = filtered_indices();
     let fs = filtered_softwares();
+    let total_count = ALL_HOTKEYS.len();
+    let matched_count = fi.len();
 
     rsx! {
         style {
             r#"
-            body {{
-                background-color: #161616;
-                color: #f2f4f8;
-                font-family: 'JetBrainsMono NF', 'JetBrainsMono Nerd Font', 'JetBrains Mono', monospace;
-                margin: 0;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                height: 100vh;
+            :root {{
+                --theme-bg-outer: #181818;
+                --theme-bg-page: #1e1e1e;
+                --theme-bg-panel: #242424;
+                --theme-bg-active: #2a2a2a;
+                --theme-border: #363636;
+                --theme-border-subtle: #2c2c2c;
+
+                --theme-accent: #d60645;
+                --theme-accent-bright: #de1b54;
+                --theme-accent-subtle: rgba(214, 6, 69, 0.14);
+                --theme-accent-glow: rgba(214, 6, 69, 0.4);
+
+                --theme-success: #10b981;
+                --theme-success-subtle: rgba(16, 185, 129, 0.15);
+                --theme-danger: #e04848;
+                --theme-warning: #f59e0b;
+                --theme-info: #38bdf8;
+
+                --text-bright: #bdbcbc;
+                --text-normal: #a8a8a8;
+                --text-muted: #787878;
+                --text-dim: #555555;
+                --text-link: #d60645;
+
+                --font-interface: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                --font-monospace: 'JetBrains Mono', monospace;
+            }}
+
+            * {{
                 box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }}
+
+            html, body {{
+                width: 100%;
+                height: 100%;
+                background-color: var(--theme-bg-outer);
+                color: var(--text-normal);
+                font-family: var(--font-interface);
+                font-size: 13px;
+                line-height: 1.5;
                 overflow: hidden;
+                -webkit-font-smoothing: antialiased;
             }}
-            .panel {{
-                border: 1px solid #393939;
-                padding: 10px;
-                margin-top: 12px;
-                margin-bottom: 10px;
-                position: relative;
+
+            /* Custom Sleek Scrollbar */
+            ::-webkit-scrollbar {{
+                width: 10px;
+                height: 10px;
             }}
-            .results-panel {{
-                border: 1px solid #393939;
-                position: relative;
-                margin-top: 12px;
-                padding: 10px;
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-                min-height: 0;
+            ::-webkit-scrollbar-track {{
+                background: transparent;
             }}
-            .panel-title {{
-                position: absolute;
-                top: -10px;
-                left: 10px;
-                background: #161616;
-                padding: 0 5px;
-                color: #ee5396;
+            ::-webkit-scrollbar-thumb {{
+                background-color: var(--theme-border);
+                border-radius: 5px;
+                border: 2px solid var(--theme-bg-panel);
+                background-clip: padding-box;
             }}
-            .input-box {{
-                color: #33b1ff;
-                outline: none;
+            ::-webkit-scrollbar-thumb:hover {{
+                background-color: var(--text-muted);
             }}
-            .list-container {{
-                flex-grow: 1;
-                overflow-y: auto;
-                min-height: 0;
-            }}
-            .list-item {{
-                padding: 2px 0;
-                display: flex;
-            }}
-            .list-item.selected {{
-                background-color: #262626;
-                font-weight: bold;
-            }}
-            .prefix-tag {{
-                white-space: pre;
-                color: #ee5396;
-            }}
-            .sw-tag {{
-                color: #be95ff;
-                width: 120px;
-                flex-shrink: 0;
-            }}
-            .keys-tag {{
-                color: #3ddbd9;
-                font-weight: bold;
-                width: 270px;
-                flex-shrink: 0;
-            }}
-            .desc-tag {{
-                color: #f2f4f8;
-            }}
-            .popup-overlay {{
-                position: absolute;
-                top: 0; left: 0; right: 0; bottom: 0;
-                display: flex;
+
+            /* Material Symbols Sharp */
+            .material-symbols-sharp {{
+                font-family: 'Material Symbols Sharp';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 18px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-flex;
                 align-items: center;
                 justify-content: center;
+                white-space: nowrap;
+                user-select: none;
+                vertical-align: middle;
+                flex-shrink: 0;
             }}
-            .popup {{
-                background: #161616;
-                border: 1px solid #ee5396;
-                width: 400px;
-                position: relative;
-                padding: 10px;
+
+            /* Outlineless Filter Buttons */
+            .filter-tab-btn {{
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--text-muted);
+                font-family: var(--font-interface);
+                font-size: 11px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+                padding: 4px 10px;
+                border-radius: 11px;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                transition: color 0.15s ease, background-color 0.15s ease;
+                white-space: nowrap;
+                user-select: none;
+            }}
+            .filter-tab-btn:hover {{
+                color: #ffffff;
+            }}
+            .filter-tab-btn.active {{
+                background-color: var(--theme-accent-subtle);
+                color: var(--theme-accent);
+                font-weight: 600;
+            }}
+
+            /* Hotkey List Item */
+            .hotkey-row {{
                 display: flex;
-                flex-direction: column;
+                align-items: center;
+                padding: 8px 16px;
+                border-bottom: 1px solid var(--theme-border-subtle);
+                transition: background-color 0.12s ease;
+                cursor: pointer;
+                font-size: 12px;
+                position: relative;
+                user-select: none;
             }}
-            .popup-input {{
-                border-bottom: 1px solid #393939;
-                color: #42be65;
-                padding-bottom: 5px;
-                margin-bottom: 10px;
+            .hotkey-row:hover {{
+                background-color: var(--theme-bg-active);
             }}
+            .hotkey-row.selected {{
+                background-color: var(--theme-bg-panel);
+                box-shadow: inset 3px 0 0 var(--theme-accent);
+            }}
+
+            /* Keyboard chip */
+            .key-chip {{
+                font-family: var(--font-monospace);
+                font-size: 11px;
+                font-weight: 500;
+                color: var(--text-bright);
+                background-color: var(--theme-bg-outer);
+                border: 1px solid var(--theme-border);
+                border-radius: 3px;
+                padding: 2px 7px;
+                display: inline-flex;
+                align-items: center;
+                transition: border-color 0.15s ease, color 0.15s ease;
+            }}
+            .hotkey-row.selected .key-chip {{
+                border-color: var(--theme-accent);
+                color: var(--theme-accent-bright);
+            }}
+
+            /* Action icon button */
+            .icon-btn {{
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--text-muted);
+                cursor: pointer;
+                padding: 4px;
+                border-radius: 3px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: color 0.15s ease;
+            }}
+            .icon-btn:hover {{
+                color: #ffffff;
+            }}
+
             .cursor {{
                 display: inline-block;
-                width: 8px;
-                height: 1em;
-                background-color: currentColor;
+                width: 7px;
+                height: 1.1em;
+                background-color: var(--theme-accent);
                 vertical-align: text-bottom;
                 animation: blink 1s step-end infinite;
             }}
@@ -530,65 +590,363 @@ fn App() -> Element {
             tabindex: 0,
             autofocus: true,
             onkeydown: onkeydown,
-            style: "flex-grow: 1; display: flex; flex-direction: column; outline: none;",
-            
-            div { class: "panel",
-                div { class: "panel-title", "Search Hotkeys [{selected_software()}] (Type to search, ':' for software, Up/Down to navigate, Esc to quit)" }
-                div { class: "input-box",
-                    "> {query()}"
-                    if mode() == Mode::Search { span { class: "cursor" } }
-                }
-            }
+            style: "width: 100%; height: 100%; display: flex; flex-direction: column; outline: none; background-color: var(--theme-bg-outer);",
 
-            div { class: "results-panel",
-                div { class: "panel-title", "Results" }
-                div { class: "list-container",
-                    {
-                        fi.iter().enumerate().map(|(idx, &(i, _))| {
-                            let hotkey = &ALL_HOTKEYS[i];
-                            let is_selected = if mode() == Mode::Search && idx == selected_index() { "selected" } else { "" };
-                            let prefix = if is_selected == "selected" { ">> " } else { "   " };
-                            
-                            rsx! {
-                                div {
-                                    class: "list-item {is_selected}",
-                                    key: "{i}",
-                                    span { class: "prefix-tag", "{prefix}" }
-                                    span { class: "sw-tag", "[{hotkey.software}]" }
-                                    span { class: "keys-tag", "{hotkey.keys}" }
-                                    span { class: "desc-tag", "{hotkey.description}" }
-                                }
-                            }
-                        })
+            // 1. BRAND HEADER BAR (Section 2 of NullDark Spec)
+            header {
+                style: "height: 44px; background-color: var(--theme-bg-outer); border-bottom: 1px solid var(--theme-border); padding: 0 16px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; user-select: none;",
+                
+                // Left Brand Anchor
+                div {
+                    style: "display: flex; align-items: center; gap: 8px;",
+                    img {
+                        src: "icon.svg",
+                        style: "height: 26px; width: auto; object-fit: contain; display: block; border: none; background: transparent;",
+                        alt: "NullDark Mark",
+                    }
+                    div {
+                        style: "display: flex; align-items: baseline;",
+                        span { style: "font-size: 13px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.2px;", "NULL" }
+                        span { style: "font-size: 13px; font-weight: 700; color: var(--text-bright); letter-spacing: 0.2px;", "HOTKEYS" }
+                    }
+                    span { style: "color: var(--theme-border); font-size: 13px; font-weight: 300; margin: 0 4px;", "|" }
+                    span { style: "font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-muted);", "KEYBOARD SHORTCUT WORKSPACE" }
+                }
+
+                // Right Status Indicators
+                div {
+                    style: "display: flex; align-items: center; gap: 14px;",
+                    
+                    // Boundary-Free Status Indicator
+                    div {
+                        style: "display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-normal); letter-spacing: 0.2px;",
+                        span { style: "width: 7px; height: 7px; border-radius: 50%; background-color: var(--theme-success); box-shadow: 0 0 6px rgba(16, 185, 129, 0.4); display: inline-block;" }
+                        span { "OPERATIONAL" }
+                    }
+
+                    // Tinted Status Pill
+                    div {
+                        style: "height: 22px; border-radius: 11px; padding: 0 10px; background: var(--theme-accent-subtle); color: var(--theme-accent); font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; border: none;",
+                        "{matched_count} SHORTCUTS"
                     }
                 }
             }
 
-            if mode() == Mode::SelectSoftware {
-                div { class: "popup-overlay",
-                    div { class: "popup",
-                        div { class: "panel-title", "Select Software (Tab to autocomplete, Enter to select)" }
-                        div { class: "popup-input",
-                            ":{software_query()}"
-                            span { class: "cursor" }
+            // 2. SEARCH & FILTER TOOLBAR
+            div {
+                style: "background-color: var(--theme-bg-outer); border-bottom: 1px solid var(--theme-border); padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-shrink: 0;",
+                
+                // Search Input Box
+                div {
+                    style: "position: relative; flex: 1; max-width: 480px; display: flex; align-items: center;",
+                    span {
+                        class: "material-symbols-sharp",
+                        style: "position: absolute; left: 10px; font-size: 18px; color: var(--text-muted); pointer-events: none;",
+                        "search"
+                    }
+                    input {
+                        r#type: "text",
+                        style: "background: var(--theme-bg-panel); border: 1px solid var(--theme-border); border-radius: 4px; padding: 6px 36px 6px 34px; color: var(--text-bright); font-size: 12px; font-family: var(--font-interface); width: 100%; outline: none; transition: border-color 0.15s, box-shadow 0.15s;",
+                        placeholder: "Search shortcuts (e.g. format, git, pane, buffer)...",
+                        value: "{query()}",
+                        oninput: move |evt| {
+                            query.set(evt.value());
+                            selected_index.set(0);
+                        },
+                    }
+                    if !query().is_empty() {
+                        button {
+                            class: "icon-btn",
+                            style: "position: absolute; right: 6px;",
+                            onclick: move |_| {
+                                query.set(String::new());
+                            },
+                            span { class: "material-symbols-sharp", style: "font-size: 16px;", "close" }
                         }
-                        div { style: "max-height: 200px; overflow-y: auto;",
+                    } else {
+                        span {
+                            style: "position: absolute; right: 8px; font-size: 10px; color: var(--text-dim); background: var(--theme-bg-outer); border: 1px solid var(--theme-border); border-radius: 3px; padding: 1px 5px; font-family: var(--font-monospace); pointer-events: none;",
+                            ":"
+                        }
+                    }
+                }
+
+                // Pipe-separated Software Pills
+                div {
+                    style: "display: flex; align-items: center; gap: 4px;",
+                    
+                    button {
+                        class: if selected_software() == "all" { "filter-tab-btn active" } else { "filter-tab-btn" },
+                        onclick: move |_| {
+                            selected_software.set("all".to_string());
+                            selected_index.set(0);
+                        },
+                        "ALL"
+                    }
+                    span { style: "color: var(--theme-border); font-size: 12px; margin: 0 2px;", "|" }
+                    button {
+                        class: if selected_software() == "vscode" { "filter-tab-btn active" } else { "filter-tab-btn" },
+                        onclick: move |_| {
+                            selected_software.set("vscode".to_string());
+                            selected_index.set(0);
+                        },
+                        "VS CODE"
+                    }
+                    span { style: "color: var(--theme-border); font-size: 12px; margin: 0 2px;", "|" }
+                    button {
+                        class: if selected_software() == "lazyvim" { "filter-tab-btn active" } else { "filter-tab-btn" },
+                        onclick: move |_| {
+                            selected_software.set("lazyvim".to_string());
+                            selected_index.set(0);
+                        },
+                        "LAZYVIM"
+                    }
+                    span { style: "color: var(--theme-border); font-size: 12px; margin: 0 2px;", "|" }
+                    button {
+                        class: if selected_software() == "tmux" { "filter-tab-btn active" } else { "filter-tab-btn" },
+                        onclick: move |_| {
+                            selected_software.set("tmux".to_string());
+                            selected_index.set(0);
+                        },
+                        "TMUX"
+                    }
+                    span { style: "color: var(--theme-border); font-size: 12px; margin: 0 2px;", "|" }
+                    button {
+                        class: "filter-tab-btn",
+                        onclick: move |_| {
+                            mode.set(Mode::SelectSoftware);
+                            software_query.set(String::new());
+                            sw_selected_index.set(0);
+                        },
+                        span { class: "material-symbols-sharp", style: "font-size: 14px; margin-right: 2px;", "tune" }
+                        "SWITCH (:)"
+                    }
+                }
+            }
+
+            // 3. MAIN WORKSPACE CANVAS
+            div {
+                style: "background-color: var(--theme-bg-page); flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative;",
+
+                // Table Header
+                div {
+                    style: "background-color: var(--theme-bg-panel); height: 32px; display: flex; align-items: center; padding: 0 16px; border-bottom: 1px solid var(--theme-border); font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; user-select: none; flex-shrink: 0;",
+                    div { style: "width: 100px; flex-shrink: 0;", "SOFTWARE" }
+                    div { style: "width: 270px; flex-shrink: 0;", "KEY COMBINATION" }
+                    div { style: "flex: 1;", "ACTION / DESCRIPTION" }
+                    div { style: "width: 60px; text-align: right;", "COPY" }
+                }
+
+                // Table Rows
+                div {
+                    style: "flex: 1; overflow-y: auto; overflow-x: hidden;",
+
+                    if fi.is_empty() {
+                        div {
+                            style: "display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 10px; color: var(--text-muted); user-select: none;",
+                            span { class: "material-symbols-sharp", style: "font-size: 36px; color: var(--text-dim);", "search_off" }
+                            div { style: "font-size: 13px; color: var(--text-bright); font-weight: 500;", "No shortcuts found" }
+                            div { style: "font-size: 11px; color: var(--text-muted);", "Try another keyword or press ':' to change software" }
+                        }
+                    } else {
+                        {
+                            fi.iter().enumerate().map(|(idx, &(i, _))| {
+                                let hotkey = &ALL_HOTKEYS[i];
+                                let is_selected = mode() == Mode::Search && idx == selected_index();
+                                let is_copied = copied_id() == Some(i);
+                                let row_class = if is_selected { "hotkey-row selected" } else { "hotkey-row" };
+                                let keys_text = hotkey.keys;
+                                
+                                rsx! {
+                                    div {
+                                        key: "{i}",
+                                        class: "{row_class}",
+                                        onclick: move |_| {
+                                            selected_index.set(idx);
+                                            copy_shortcut(i, keys_text);
+                                        },
+
+                                        // Software Tag
+                                        div {
+                                            style: "width: 100px; flex-shrink: 0;",
+                                            span {
+                                                style: "font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); background: var(--theme-bg-outer); padding: 2px 6px; border-radius: 3px;",
+                                                "{hotkey.software}"
+                                            }
+                                        }
+
+                                        // Key Combination Chip
+                                        div {
+                                            style: "width: 270px; flex-shrink: 0; padding-right: 12px; display: flex; align-items: center; gap: 4px;",
+                                            span {
+                                                class: "key-chip",
+                                                "{hotkey.keys}"
+                                            }
+                                        }
+
+                                        // Description
+                                        div {
+                                            style: "flex: 1; color: var(--text-normal); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px;",
+                                            "{hotkey.description}"
+                                        }
+
+                                        // Copy Action
+                                        div {
+                                            style: "width: 60px; text-align: right;",
+                                            if is_copied {
+                                                span {
+                                                    style: "font-size: 11px; color: var(--theme-success); font-weight: 500; display: inline-flex; align-items: center; gap: 2px;",
+                                                    span { class: "material-symbols-sharp", style: "font-size: 14px;", "check" }
+                                                    "COPIED"
+                                                }
+                                            } else {
+                                                button {
+                                                    class: "icon-btn",
+                                                    title: "Copy shortcut",
+                                                    onclick: move |evt| {
+                                                        evt.stop_propagation();
+                                                        copy_shortcut(i, keys_text);
+                                                    },
+                                                    span { class: "material-symbols-sharp", style: "font-size: 16px;", "content_copy" }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+
+            // 4. SOFTWARE SELECTION MODAL
+            if mode() == Mode::SelectSoftware {
+                div {
+                    style: "position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 1000; user-select: none;",
+                    onclick: move |_| {
+                        mode.set(Mode::Search);
+                    },
+                    div {
+                        style: "width: 440px; background-color: var(--theme-bg-panel); border-radius: 6px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); overflow: hidden; display: flex; flex-direction: column; border: none;",
+                        onclick: move |evt| {
+                            evt.stop_propagation();
+                        },
+
+                        // Modal Header
+                        div {
+                            style: "padding: 12px 16px; border-bottom: 1px solid var(--theme-border); display: flex; align-items: center; justify-content: space-between;",
+                            div {
+                                style: "display: flex; align-items: center; gap: 6px;",
+                                span { class: "material-symbols-sharp", style: "font-size: 16px; color: var(--theme-accent);", "filter_list" }
+                                span { style: "font-size: 13px; font-weight: 600; color: var(--text-bright);", "Filter by Software" }
+                            }
+                            button {
+                                class: "icon-btn",
+                                onclick: move |_| mode.set(Mode::Search),
+                                span { class: "material-symbols-sharp", style: "font-size: 16px;", "close" }
+                            }
+                        }
+
+                        // Search Input
+                        div {
+                            style: "padding: 12px 16px; border-bottom: 1px solid var(--theme-border-subtle);",
+                            div {
+                                style: "position: relative; display: flex; align-items: center;",
+                                span {
+                                    style: "position: absolute; left: 10px; font-size: 12px; color: var(--theme-accent); font-family: var(--font-monospace);",
+                                    ":"
+                                }
+                                input {
+                                    r#type: "text",
+                                    autofocus: true,
+                                    style: "width: 100%; background: var(--theme-bg-outer); border: 1px solid var(--theme-border); border-radius: 4px; padding: 6px 12px 6px 24px; color: var(--text-bright); font-size: 12px; outline: none;",
+                                    placeholder: "Type software name (Tab to complete, Enter to select)...",
+                                    value: "{software_query()}",
+                                    oninput: move |evt| {
+                                        software_query.set(evt.value());
+                                        sw_selected_index.set(0);
+                                    },
+                                }
+                            }
+                        }
+
+                        // Software List
+                        div {
+                            style: "max-height: 220px; overflow-y: auto; padding: 4px 0;",
                             {
                                 fs.iter().enumerate().map(|(idx, sw)| {
-                                    let is_selected = if idx == sw_selected_index() { "selected" } else { "" };
-                                    let prefix = if is_selected == "selected" { "> " } else { "  " };
+                                    let sw_str = sw.clone();
+                                    let is_active = idx == sw_selected_index();
+                                    let is_current = selected_software() == *sw;
+                                    let item_style = if is_active {
+                                        "padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; background: var(--theme-bg-active); color: var(--theme-accent); font-weight: 600; cursor: pointer;"
+                                    } else {
+                                        "padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text-normal); cursor: pointer;"
+                                    };
+
                                     rsx! {
                                         div {
-                                            class: "list-item {is_selected}",
                                             key: "{sw}",
-                                            span { class: "prefix-tag", "{prefix}" }
-                                            span { "{sw}" }
+                                            style: "{item_style}",
+                                            onclick: move |_| {
+                                                selected_software.set(sw_str.clone());
+                                                mode.set(Mode::Search);
+                                                query.set(String::new());
+                                                selected_index.set(0);
+                                            },
+                                            div {
+                                                style: "display: flex; align-items: center; gap: 8px;",
+                                                if is_current {
+                                                    span { class: "material-symbols-sharp", style: "font-size: 16px; color: var(--theme-accent);", "check" }
+                                                } else {
+                                                    span { style: "width: 16px; display: inline-block;" }
+                                                }
+                                                span { style: "text-transform: uppercase;", "{sw}" }
+                                            }
+                                            if is_current {
+                                                span { style: "font-size: 10px; color: var(--text-muted);", "ACTIVE" }
+                                            }
                                         }
                                     }
                                 })
                             }
                         }
                     }
+                }
+            }
+
+            // 5. STATUS FOOTER BAR (Section 6 of NullDark Spec)
+            footer {
+                style: "height: 28px; background-color: var(--theme-bg-outer); border-top: 1px solid var(--theme-border); padding: 0 16px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--text-muted); user-select: none; flex-shrink: 0;",
+                
+                // Keyboard helpers
+                div {
+                    style: "display: flex; align-items: center; gap: 14px;",
+                    span {
+                        span { style: "font-family: var(--font-monospace); color: var(--text-bright);", "↑↓ " }
+                        "Navigate"
+                    }
+                    span {
+                        span { style: "font-family: var(--font-monospace); color: var(--text-bright);", "Enter " }
+                        "Copy Shortcut"
+                    }
+                    span {
+                        span { style: "font-family: var(--font-monospace); color: var(--text-bright);", ": " }
+                        "Select Software"
+                    }
+                    span {
+                        span { style: "font-family: var(--font-monospace); color: var(--text-bright);", "Esc " }
+                        "Clear Search"
+                    }
+                }
+
+                // Items Count
+                div {
+                    style: "display: flex; align-items: center; gap: 6px;",
+                    span { "Category: " }
+                    span { style: "color: var(--theme-accent); font-weight: 600; text-transform: uppercase;", "{selected_software()}" }
+                    span { style: "color: var(--theme-border); margin: 0 2px;", "•" }
+                    span { "Showing {matched_count} of {total_count}" }
                 }
             }
         }

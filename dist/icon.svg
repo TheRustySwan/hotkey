@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="triangle-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#52545b"/>
+      <stop offset="0.2" stop-color="#45474d"/>
+      <stop offset="0.42" stop-color="#383a3f"/>
+      <stop offset="0.68" stop-color="#282a2e"/>
+      <stop offset="1" stop-color="#202225"/>
+    </linearGradient>
+    <linearGradient id="triangle-edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d0d3dc"/>
+      <stop offset="0.42" stop-color="#747881"/>
+      <stop offset="1" stop-color="#2a2d31"/>
+    </linearGradient>
+    <radialGradient id="triangle-light" cx="50%" cy="12%" r="80%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="0.7" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="slash-fill" x1="207" y1="31" x2="55" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff0a6a"/>
+      <stop offset="0.2" stop-color="#ff005a"/>
+      <stop offset="0.42" stop-color="#fc005e"/>
+      <stop offset="0.65" stop-color="#fb0054"/>
+      <stop offset="0.86" stop-color="#fd0041"/>
+      <stop offset="1" stop-color="#ff085a"/>
+    </linearGradient>
+    <radialGradient id="slash-light" cx="50%" cy="58%" r="36%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.035"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="triangle-shadow" x="-8%" y="-6%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <filter id="slash-shadow" x="-12%" y="-8%" width="124%" height="118%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.42"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="0.45" flood-color="#ff0a5b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#triangle-shadow)">
+    <path
+      d="M128 9.5c1 0 1.7.5 2.3 1.5l122.2 197.5c1.5 2.4.4 4-2.5 4H6c-2.9 0-4-1.6-2.5-4L125.7 11c.6-1 1.3-1.5 2.3-1.5Z"
+      fill="url(#triangle-fill)"
+      stroke="url(#triangle-edge)"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M128 11.5 250.2 210.7H5.8Z"
+      fill="url(#triangle-light)"
+      opacity="0.65"
+    />
+  </g>
+
+  <g filter="url(#slash-shadow)">
+    <path
+      d="M206 31 Q204 35 202 40 Q199 45 196 50 Q192 57 188 64 Q183 72 178 80 Q172 90 165 100 Q159 110 152 120 Q145 130 138 140 Q131 150 123 160 Q115 170 107 180 Q99 190 91 200 Q83 211 75 220 Q71 225 67 230 Q62 236 58 240 Q56 243 55 244 Q53 242 54 240 Q57 235 61 230 Q64 225 68 220 Q75 210 82 200 Q89 190 95 180 Q102 170 109 160 Q116 150 123 140 Q131 130 138 120 Q146 110 153 100 Q161 90 168 80 Q174 71 180 64 Q185 56 190 50 Q194 44 198 40 Q201 35 204 32 Q205 31 206 31Z"
+      fill="url(#slash-fill)"
+    />
+    <path
+      d="M206 31 Q204 35 202 40 Q199 45 196 50 Q192 57 188 64 Q183 72 178 80 Q172 90 165 100 Q159 110 152 120 Q145 130 138 140 Q131 150 123 160 Q115 170 107 180 Q99 190 91 200 Q83 211 75 220 Q71 225 67 230 Q62 236 58 240 Q56 243 55 244 Q53 242 54 240 Q57 235 61 230 Q64 225 68 220 Q75 210 82 200 Q89 190 95 180 Q102 170 109 160 Q116 150 123 140 Q131 130 138 120 Q146 110 153 100 Q161 90 168 80 Q174 71 180 64 Q185 56 190 50 Q194 44 198 40 Q201 35 204 32 Q205 31 206 31Z"
+      fill="url(#slash-light)"
+    />
+  </g>
+</svg>

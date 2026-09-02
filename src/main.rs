@@ -296,6 +296,7 @@ lazy_static::lazy_static! {
 
 const SOFTWARES: &[&str] = &["all", "vscode", "lazyvim", "tmux"];
 
+#[derive(Clone, Copy, PartialEq)]
 enum Mode {
     Search,
     SelectSoftware,
@@ -579,23 +580,68 @@ fn centered_rect(percent_x: u16, percent_y: u16, r: Rect) -> Rect {
         .split(popup_layout[1])[1]
 }
 
+// NullDark Theme Color Tokens
+const THEME_BG_OUTER: Color = Color::Rgb(24, 24, 24);      // #181818
+const THEME_BG_PAGE: Color = Color::Rgb(30, 30, 30);       // #1e1e1e
+const THEME_BG_PANEL: Color = Color::Rgb(36, 36, 36);      // #242424
+const THEME_BG_ACTIVE: Color = Color::Rgb(42, 42, 42);     // #2a2a2a
+const THEME_BORDER: Color = Color::Rgb(54, 54, 54);        // #363636
+const THEME_BORDER_SUBTLE: Color = Color::Rgb(44, 44, 44); // #2c2c2c
+
+const THEME_ACCENT: Color = Color::Rgb(214, 6, 69);        // #d60645 (Signature Magenta)
+const THEME_ACCENT_BRIGHT: Color = Color::Rgb(222, 27, 84);// #de1b54
+const THEME_SUCCESS: Color = Color::Rgb(16, 185, 129);     // #10b981
+
+const THEME_TEXT_BRIGHT: Color = Color::Rgb(189, 189, 189);// #bdbcbc
+const THEME_TEXT_NORMAL: Color = Color::Rgb(168, 168, 168);// #a8a8a8
+const THEME_TEXT_MUTED: Color = Color::Rgb(120, 120, 120); // #787878
+const THEME_TEXT_DIM: Color = Color::Rgb(85, 85, 85);      // #555555
+
 fn ui(f: &mut Frame, app: &mut App) {
+    // Fill entire terminal with NullDark outer background (#181818)
+    f.render_widget(Block::default().style(Style::default().bg(THEME_BG_OUTER)), f.area());
+
     let chunks = Layout::default()
         .direction(Direction::Vertical)
-        .margin(2)
-        .constraints([Constraint::Length(3), Constraint::Min(1)].as_ref())
+        .margin(1)
+        .constraints([
+            Constraint::Length(1), // Brand Header
+            Constraint::Length(3), // Search Bar
+            Constraint::Min(1),    // Results List
+            Constraint::Length(1), // Status Footer
+        ].as_ref())
         .split(f.area());
 
-    let title = format!(
-        "Search Hotkeys [{}] (Type to search, ':' for software, Up/Down to navigate, Esc to quit)",
-        app.selected_software
-    );
-    let input_text = format!("> {}", app.query);
-    let input = Paragraph::new(input_text)
-        .style(Style::default().fg(Color::Yellow))
-        .block(Block::default().borders(Borders::ALL).title(title));
-    f.render_widget(input, chunks[0]);
+    // 1. Brand Header
+    let header_line = Line::from(vec![
+        Span::styled("NULL", Style::default().fg(THEME_TEXT_MUTED).add_modifier(Modifier::BOLD)),
+        Span::styled("HOTKEYS", Style::default().fg(THEME_TEXT_BRIGHT).add_modifier(Modifier::BOLD)),
+        Span::styled(" | ", Style::default().fg(THEME_BORDER)),
+        Span::styled("KEYBOARD SHORTCUT WORKSPACE", Style::default().fg(THEME_TEXT_MUTED)),
+        Span::styled("  •  ", Style::default().fg(THEME_BORDER)),
+        Span::styled(format!("[{}]", app.selected_software.to_uppercase()), Style::default().fg(THEME_ACCENT).add_modifier(Modifier::BOLD)),
+        Span::styled(format!(" ({} shortcuts)", app.filtered_indices.len()), Style::default().fg(THEME_TEXT_DIM)),
+    ]);
+    f.render_widget(Paragraph::new(header_line), chunks[0]);
 
+    // 2. Search Input
+    let cursor_char = if app.mode == Mode::Search { "█" } else { "" };
+    let input_line = Line::from(vec![
+        Span::styled("> ", Style::default().fg(THEME_ACCENT).add_modifier(Modifier::BOLD)),
+        Span::styled(&app.query, Style::default().fg(THEME_TEXT_BRIGHT)),
+        Span::styled(cursor_char, Style::default().fg(THEME_ACCENT)),
+    ]);
+    let input = Paragraph::new(input_line)
+        .block(
+            Block::default()
+                .borders(Borders::ALL)
+                .border_style(Style::default().fg(THEME_BORDER))
+                .style(Style::default().bg(THEME_BG_PANEL))
+                .title(Span::styled(" SEARCH ", Style::default().fg(THEME_TEXT_MUTED).add_modifier(Modifier::BOLD)))
+        );
+    f.render_widget(input, chunks[1]);
+
+    // 3. Results List
     let items: Vec<ListItem> = app
         .filtered_indices
         .iter()
@@ -603,36 +649,60 @@ fn ui(f: &mut Frame, app: &mut App) {
             let hotkey = &ALL_HOTKEYS[i];
 
             let sw_span = Span::styled(
-                format!("[{:<7}] ", hotkey.software),
-                Style::default().fg(Color::DarkGray),
+                format!("[{:<7}] ", hotkey.software.to_uppercase()),
+                Style::default().fg(THEME_TEXT_MUTED),
             );
 
             let keys_span = Span::styled(
-                format!("{:<20}", hotkey.keys),
+                format!("{:<26}", hotkey.keys),
                 Style::default()
-                    .fg(Color::Cyan)
+                    .fg(THEME_TEXT_BRIGHT)
                     .add_modifier(Modifier::BOLD),
             );
 
-            let desc_span = Span::raw(hotkey.description);
+            let desc_span = Span::styled(
+                hotkey.description,
+                Style::default().fg(THEME_TEXT_NORMAL),
+            );
             ListItem::new(Line::from(vec![sw_span, keys_span, desc_span]))
         })
         .collect();
 
     let list = List::new(items)
-        .block(Block::default().borders(Borders::ALL).title("Results"))
+        .block(
+            Block::default()
+                .borders(Borders::ALL)
+                .border_style(Style::default().fg(THEME_BORDER))
+                .style(Style::default().bg(THEME_BG_PAGE))
+                .title(Span::styled(" SHORTCUTS ", Style::default().fg(THEME_TEXT_MUTED).add_modifier(Modifier::BOLD)))
+        )
         .highlight_style(
             Style::default()
-                .bg(Color::DarkGray)
+                .bg(THEME_BG_ACTIVE)
+                .fg(THEME_ACCENT_BRIGHT)
                 .add_modifier(Modifier::BOLD),
         )
         .highlight_symbol(">> ");
 
-    f.render_stateful_widget(list, chunks[1], &mut app.state);
+    f.render_stateful_widget(list, chunks[2], &mut app.state);
 
+    // 4. Status Footer
+    let footer_line = Line::from(vec![
+        Span::styled("↑↓ ", Style::default().fg(THEME_TEXT_BRIGHT)),
+        Span::styled("Navigate  ", Style::default().fg(THEME_TEXT_DIM)),
+        Span::styled(": ", Style::default().fg(THEME_TEXT_BRIGHT)),
+        Span::styled("Select Software  ", Style::default().fg(THEME_TEXT_DIM)),
+        Span::styled("Esc ", Style::default().fg(THEME_TEXT_BRIGHT)),
+        Span::styled("Clear  ", Style::default().fg(THEME_TEXT_DIM)),
+        Span::styled("q / Ctrl+C ", Style::default().fg(THEME_TEXT_BRIGHT)),
+        Span::styled("Quit", Style::default().fg(THEME_TEXT_DIM)),
+    ]);
+    f.render_widget(Paragraph::new(footer_line), chunks[3]);
+
+    // 5. Software Selection Modal
     if let Mode::SelectSoftware = app.mode {
-        let area = centered_rect(60, 40, f.area());
-        f.render_widget(Clear, area); // clear background
+        let area = centered_rect(50, 45, f.area());
+        f.render_widget(Clear, area);
 
         let popup_chunks = Layout::default()
             .direction(Direction::Vertical)
@@ -642,25 +712,45 @@ fn ui(f: &mut Frame, app: &mut App) {
 
         let popup_block = Block::default()
             .borders(Borders::ALL)
-            .title("Select Software (Tab to autocomplete, Enter to select)")
-            .style(Style::default().bg(Color::Black));
+            .border_style(Style::default().fg(THEME_ACCENT))
+            .title(Span::styled(" FILTER BY SOFTWARE (Tab autocomplete, Enter select, Esc cancel) ", Style::default().fg(THEME_TEXT_BRIGHT).add_modifier(Modifier::BOLD)))
+            .style(Style::default().bg(THEME_BG_PANEL));
         f.render_widget(popup_block, area);
 
-        let sw_input = Paragraph::new(format!(":{}", app.software_query))
-            .style(Style::default().fg(Color::Green))
-            .block(Block::default().borders(Borders::BOTTOM));
+        let sw_input_line = Line::from(vec![
+            Span::styled(":", Style::default().fg(THEME_ACCENT).add_modifier(Modifier::BOLD)),
+            Span::styled(&app.software_query, Style::default().fg(THEME_TEXT_BRIGHT)),
+            Span::styled("█", Style::default().fg(THEME_ACCENT)),
+        ]);
+        let sw_input = Paragraph::new(sw_input_line)
+            .block(
+                Block::default()
+                    .borders(Borders::BOTTOM)
+                    .border_style(Style::default().fg(THEME_BORDER_SUBTLE))
+            );
         f.render_widget(sw_input, popup_chunks[0]);
 
         let sw_items: Vec<ListItem> = app
             .filtered_softwares
             .iter()
-            .map(|s| ListItem::new(Span::raw(s)))
+            .map(|s| {
+                let is_current = app.selected_software == *s;
+                if is_current {
+                    ListItem::new(Line::from(vec![
+                        Span::styled(format!("{:<15} ", s.to_uppercase()), Style::default().fg(THEME_TEXT_BRIGHT).add_modifier(Modifier::BOLD)),
+                        Span::styled("[ACTIVE]", Style::default().fg(THEME_SUCCESS).add_modifier(Modifier::BOLD)),
+                    ]))
+                } else {
+                    ListItem::new(Span::styled(s.to_uppercase(), Style::default().fg(THEME_TEXT_NORMAL)))
+                }
+            })
             .collect();
 
         let sw_list = List::new(sw_items)
             .highlight_style(
                 Style::default()
-                    .bg(Color::DarkGray)
+                    .bg(THEME_BG_ACTIVE)
+                    .fg(THEME_ACCENT)
                     .add_modifier(Modifier::BOLD),
             )
             .highlight_symbol("> ");

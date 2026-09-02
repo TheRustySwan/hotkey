@@ -40,6 +40,8 @@ if (Test-Path $dist) {
     New-Item -ItemType Directory -Path $dist | Out-Null
 }
 Copy-Item -Path (Join-Path $bundle '*') -Destination $dist -Recurse
+New-Item -ItemType File -Force -Path (Join-Path $dist '.nojekyll') | Out-Null
+
 
 $size = (Get-ChildItem $dist -Recurse -File | Measure-Object -Property Length -Sum).Sum
 Write-Host ("dist/ ready ({0:N1} MB)" -f ($size / 1MB)) -ForegroundColor Green
