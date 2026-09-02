@@ -1,0 +1,95 @@
+# Builds the web bundle and commits it to dist/.
+#
+# Vercel watches this repository and deploys whatever lands on main.
+# It can either serve the committed dist/ directly or run build_vercel.sh.
+#
+# This needs no Vercel token and no repository secrets.
+name: Build web bundle
+
+on:
+  push:
+    branches: [main]
+    # Without this the bundle commit below would retrigger the workflow.
+    paths-ignore: ['dist/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DX_VERSION: 0.7.10
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    name: Check and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: test
+
+      - name: Cargo Check TUI App
+        run: cargo check --locked
+
+      - name: Cargo Check Web App
+        working-directory: ./hotkey_web
+        run: cargo check --locked
+
+  build:
+    name: Web bundle
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: wasm
+          workspaces: hotkey_web
+
+      - name: Install dx
+        uses: taiki-e/install-action@v2
+        with:
+          tool: dioxus-cli@${{ env.DX_VERSION }}
+
+      - name: Build Web Bundle
+        working-directory: ./hotkey_web
+        run: dx bundle --platform web --release
+
+      - name: Stage dist/
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          if [ -d "hotkey_web/dist/public" ]; then
+            cp -r hotkey_web/dist/public/. dist/
+          else
+            cp -r hotkey_web/target/dx/hotkey_web/release/web/public/. dist/
+          fi
+          touch dist/.nojekyll
+          ls -lR dist
+
+      # A pull request only proves the bundle builds; publishing is for main.
+      - name: Commit the bundle
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A dist
+          if git diff --cached --quiet; then
+            echo 'Bundle unchanged; nothing to deploy.'
+            exit 0
+          fi
+          git commit -m "Build web bundle from ${GITHUB_SHA::7}"
+          git push

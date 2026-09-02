@@ -1,2 +1,15 @@
-target/
-dist/
+# Rust target directories
+/target/
+**/target/
+hotkey_web/dist/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Vercel CLI project link
+/.vercel/

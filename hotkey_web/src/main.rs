@@ -1,7 +1,6 @@
 use dioxus::prelude::*;
 use fuzzy_matcher::skim::SkimMatcherV2;
 use fuzzy_matcher::FuzzyMatcher;
-use std::collections::HashMap;
 
 #[derive(Clone, PartialEq)]
 struct Hotkey {

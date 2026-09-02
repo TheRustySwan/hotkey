@@ -3,5 +3,3 @@ name = "Hotkeys"
 default_platform = "web"
 out_dir = "dist"
 
-[web.app]
-base_path = "hotkey"
