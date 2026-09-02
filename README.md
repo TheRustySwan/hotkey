@@ -18,9 +18,9 @@ cargo run --release
 
 ```sh
 # Option 1: Serve prebuilt bundle
-python serve_web.py
+python ./scripts/serve_web.py
 # or with PowerShell
-./serve_web.ps1
+./scripts/serve-web.ps1
 
 # Option 2: Run with Dioxus live reload
 cd hotkey_web
@@ -45,30 +45,20 @@ This compiles `hotkey_web` in release mode, bundles the WASM binary and JS glue,
 
 ## Deploying to Vercel
 
-The web application is configured for continuous deployment on **Vercel** just like the Schedule (`Scheduler`), Notes, and Markdown apps.
+The web application is configured for continuous deployment on **Vercel** just like the Schedule (`Scheduler`) app.
 
 ### How it Works
 
-1. **Prebuilt Static Serving**: The repository includes a production-ready `dist/` bundle.
-2. **Vercel Configuration**: [`vercel.json`](vercel.json) configures:
-   - Output directory: `dist`
-   - Build command: `bash build_vercel.sh` (or empty for instant serving)
-   - Clean SPA rewrites to `/index.html`
-   - Optimized caching and `application/wasm` MIME type headers
-3. **Cloud Build Script**: [`build_vercel.sh`](build_vercel.sh) automatically installs Rust and the precompiled Dioxus CLI (`dx`) to build from source on Vercel if triggered.
-4. **GitHub Actions CI/CD**: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) automatically runs checks, builds the web bundle on pushes to `main`, stages the fresh bundle into `dist/`, and commits it so Vercel can serve it immediately.
+1. **GitHub Actions builds; Vercel serves**: Push to `main` and [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs checks, compiles the WASM bundle with `dx`, and commits it to `dist/`.
+2. **Pure Static Serving**: [`vercel.json`](vercel.json) sets an empty `buildCommand: ""` and points `outputDirectory` directly at `dist/`. Vercel simply uploads and serves the prebuilt bundle in seconds with zero cold-recompile overhead and zero serverless crashes.
+3. **Optimized Headers & Routing**: [`vercel.json`](vercel.json) includes SPA rewrites to `/index.html`, immutable caching for static assets, and the `application/wasm` MIME type header.
 
 ### Connecting to Vercel
 
-1. Push your changes to GitHub:
-   ```sh
-   git push origin main
-   ```
-2. Go to the [Vercel Dashboard](https://vercel.com/new) and click **"Add New..."** → **"Project"**.
-3. Import the `TheRustySwan/hotkey` repository.
-4. Vercel will automatically detect [`vercel.json`](vercel.json):
+1. In the [Vercel Dashboard](https://vercel.com/new), click **"Add New..."** → **"Project"** and import the `TheRustySwan/hotkey` repository.
+2. Vercel detects [`vercel.json`](vercel.json):
    - **Framework Preset**: Other
    - **Root Directory**: `./`
-   - **Build Command**: `bash build_vercel.sh` (or override with empty to serve prebuilt `dist`)
+   - **Build Command**: (leave empty / disabled)
    - **Output Directory**: `dist`
-5. Click **Deploy**. Every new push to `main` will automatically deploy your updates.
+3. Click **Deploy**. Vercel will immediately deploy the static `dist/` bundle. Every subsequent push to `main` will build and publish automatically.

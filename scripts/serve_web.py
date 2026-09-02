@@ -6,7 +6,8 @@ import webbrowser
 
 HOST = "127.0.0.1"
 PORT = 8080
-DIRECTORY = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dist")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DIRECTORY = os.path.join(ROOT_DIR, "dist")
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -23,7 +24,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     if not os.path.exists(DIRECTORY):
-        print(f"Directory {DIRECTORY} does not exist. Run build_web.ps1 first!")
+        print(f"Directory {DIRECTORY} does not exist. Run scripts/build-web.ps1 first!")
         sys.exit(1)
     os.chdir(DIRECTORY)
     socketserver.TCPServer.allow_reuse_address = True
