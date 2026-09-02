@@ -300,6 +300,7 @@ fn App() -> Element {
             Mode::Search => {
                 match key.to_string().as_str() {
                     "ArrowDown" => {
+                        evt.prevent_default();
                         let fi_len = filtered_indices().len();
                         if fi_len > 0 {
                             let curr = selected_index();
@@ -307,6 +308,7 @@ fn App() -> Element {
                         }
                     }
                     "ArrowUp" => {
+                        evt.prevent_default();
                         let fi_len = filtered_indices().len();
                         if fi_len > 0 {
                             let curr = selected_index();
@@ -314,6 +316,7 @@ fn App() -> Element {
                         }
                     }
                     "Enter" => {
+                        evt.prevent_default();
                         let fi = filtered_indices();
                         if let Some(&(i, _)) = fi.get(selected_index()) {
                             let hotkey = &ALL_HOTKEYS[i];
@@ -323,32 +326,26 @@ fn App() -> Element {
                     "Escape" => {
                         if !query().is_empty() {
                             query.set(String::new());
-                        }
-                    }
-                    "Backspace" => {
-                        let mut q = query();
-                        if !q.is_empty() {
-                            q.pop();
-                            query.set(q);
+                            selected_index.set(0);
                         }
                     }
                     ":" if query().is_empty() => {
+                        evt.prevent_default();
                         mode.set(Mode::SelectSoftware);
                         software_query.set(String::new());
                         sw_selected_index.set(0);
-                    }
-                    char_str if char_str.len() == 1 => {
-                        let mut q = query();
-                        q.push_str(char_str);
-                        query.set(q);
                     }
                     _ => {}
                 }
             }
             Mode::SelectSoftware => {
                 match key.to_string().as_str() {
-                    "Escape" => mode.set(Mode::Search),
+                    "Escape" => {
+                        evt.prevent_default();
+                        mode.set(Mode::Search);
+                    }
                     "ArrowDown" => {
+                        evt.prevent_default();
                         let fs_len = filtered_softwares().len();
                         if fs_len > 0 {
                             let curr = sw_selected_index();
@@ -356,6 +353,7 @@ fn App() -> Element {
                         }
                     }
                     "ArrowUp" => {
+                        evt.prevent_default();
                         let fs_len = filtered_softwares().len();
                         if fs_len > 0 {
                             let curr = sw_selected_index();
@@ -363,6 +361,7 @@ fn App() -> Element {
                         }
                     }
                     "Tab" => {
+                        evt.prevent_default();
                         let fs = filtered_softwares();
                         let curr = sw_selected_index();
                         if let Some(sw) = fs.get(curr) {
@@ -370,25 +369,15 @@ fn App() -> Element {
                         }
                     }
                     "Enter" => {
+                        evt.prevent_default();
                         let fs = filtered_softwares();
                         let curr = sw_selected_index();
                         if let Some(sw) = fs.get(curr) {
                             selected_software.set(sw.clone());
                             mode.set(Mode::Search);
                             query.set(String::new());
+                            selected_index.set(0);
                         }
-                    }
-                    "Backspace" => {
-                        let mut sq = software_query();
-                        if !sq.is_empty() {
-                            sq.pop();
-                            software_query.set(sq);
-                        }
-                    }
-                    char_str if char_str.len() == 1 => {
-                        let mut sq = software_query();
-                        sq.push_str(char_str);
-                        software_query.set(sq);
                     }
                     _ => {}
                 }
@@ -646,6 +635,7 @@ fn App() -> Element {
                     }
                     input {
                         r#type: "text",
+                        autofocus: true,
                         style: "background: var(--theme-bg-panel); border: 1px solid var(--theme-border); border-radius: 4px; padding: 6px 36px 6px 34px; color: var(--text-bright); font-size: 12px; font-family: var(--font-interface); width: 100%; outline: none; transition: border-color 0.15s, box-shadow 0.15s;",
                         placeholder: "Search shortcuts (e.g. format, git, pane, buffer)...",
                         value: "{query()}",
