@@ -2,7 +2,7 @@
 
 A searchable, keyboard-driven cheat sheet for software keyboard shortcuts, built with Rust. Available both as a terminal UI (Ratatui + Crossterm) and an interactive Web application (Dioxus WebAssembly).
 
-Supports shortcuts for VS Code, Neovim, Tmux, Git, Windows, macOS, Linux, and more with instant fuzzy searching and category filters.
+Supports shortcuts for VS Code, Vim motions & patterns, LazyVim, Tmux, and Terminal (Bash/Zsh/Readline/Windows Terminal) with instant fuzzy searching and category filters.
 
 ---
 
